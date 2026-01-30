@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import Button from './UI/Button';
 import { Icons } from './UI/Icons';
+import { GermanFlag, UKFlag } from './UI/Flags';
 import { Locale } from '../i18n-config';
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
@@ -42,8 +43,20 @@ const HeaderNav = ({ dictionary, lang }: { dictionary: any, lang: Locale }) => {
         <nav className="hidden md:flex items-center gap-8">
           {/* Language Switcher */}
           <div className="flex items-center gap-2 mr-4 bg-gray-100 rounded-full px-2 py-1">
-            <Link href={switchLanguage('de')} className={`px-2 py-0.5 rounded-full text-xs font-medium transition-colors ${lang === 'de' ? 'bg-[#f4c653] text-[#1c170d]' : 'text-gray-500 hover:text-[#1c170d]'}`}>DE</Link>
-            <Link href={switchLanguage('en')} className={`px-2 py-0.5 rounded-full text-xs font-medium transition-colors ${lang === 'en' ? 'bg-[#f4c653] text-[#1c170d]' : 'text-gray-500 hover:text-[#1c170d]'}`}>EN</Link>
+            <Link
+              href={switchLanguage('de')}
+              className={`p-1.5 rounded-full transition-colors ${lang === 'de' ? 'bg-[#f4c653] shadow-sm' : 'hover:bg-gray-200 opacity-60 hover:opacity-100'}`}
+              aria-label="Deutsch"
+            >
+              <GermanFlag className="w-5 h-auto rounded-[2px]" />
+            </Link>
+            <Link
+              href={switchLanguage('en')}
+              className={`p-1.5 rounded-full transition-colors ${lang === 'en' ? 'bg-[#f4c653] shadow-sm' : 'hover:bg-gray-200 opacity-60 hover:opacity-100'}`}
+              aria-label="English"
+            >
+              <UKFlag className="w-5 h-auto rounded-[2px]" />
+            </Link>
           </div>
 
           <NavLink href={`/${lang}`}>{dictionary.navigation.services}</NavLink>
@@ -66,10 +79,22 @@ const HeaderNav = ({ dictionary, lang }: { dictionary: any, lang: Locale }) => {
           {isOpen && (
             <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg py-4 px-6 z-50 border-t border-gray-200">
               {/* Mobile Language Switcher */}
-              <div className="flex items-center gap-3 mb-4 pb-4 border-b border-gray-100">
+              <div className="flex items-center gap-4 mb-4 pb-4 border-b border-gray-100">
                 <span className="text-sm font-medium text-gray-500">Sprache / Language:</span>
-                <Link href={switchLanguage('de')} className={`px-2 py-1 rounded text-sm font-bold ${lang === 'de' ? 'bg-[#f4c653]' : 'bg-gray-100'}`}>DE</Link>
-                <Link href={switchLanguage('en')} className={`px-2 py-1 rounded text-sm font-bold ${lang === 'en' ? 'bg-[#f4c653]' : 'bg-gray-100'}`}>EN</Link>
+                <div className="flex items-center gap-2">
+                  <Link
+                    href={switchLanguage('de')}
+                    className={`p-1.5 rounded-lg transition-colors ${lang === 'de' ? 'bg-[#f4c653] shadow-sm' : 'bg-gray-50 hover:bg-gray-100'}`}
+                  >
+                    <GermanFlag className="w-6 h-auto rounded-[2px]" />
+                  </Link>
+                  <Link
+                    href={switchLanguage('en')}
+                    className={`p-1.5 rounded-lg transition-colors ${lang === 'en' ? 'bg-[#f4c653] shadow-sm' : 'bg-gray-50 hover:bg-gray-100'}`}
+                  >
+                    <UKFlag className="w-6 h-auto rounded-[2px]" />
+                  </Link>
+                </div>
               </div>
 
               <nav className="flex flex-col gap-4">
