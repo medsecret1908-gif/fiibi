@@ -10,7 +10,8 @@ const subjects = [
   'Immobilieninvestment'
 ];
 
-const ContactForm = () => {
+const ContactForm = ({ dictionary }: { dictionary: any }) => {
+  const t = dictionary.contact;
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -58,35 +59,35 @@ const ContactForm = () => {
     };
 
     if (!formData.firstName.trim()) {
-      newErrors.firstName = 'Vorname ist erforderlich';
+      newErrors.firstName = t.errors.firstNameRequired;
       valid = false;
     }
 
     if (!formData.lastName.trim()) {
-      newErrors.lastName = 'Nachname ist erforderlich';
+      newErrors.lastName = t.errors.lastNameRequired;
       valid = false;
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'E-Mail ist erforderlich';
+      newErrors.email = t.errors.emailRequired;
       valid = false;
     } else if (!validateEmail(formData.email)) {
-      newErrors.email = 'Bitte geben Sie eine gültige E-Mail-Adresse ein';
+      newErrors.email = t.errors.emailInvalid;
       valid = false;
     }
 
     if (!formData.subject) {
-      newErrors.subject = 'Bitte wählen Sie einen Betreff';
+      newErrors.subject = t.errors.subjectRequired;
       valid = false;
     }
 
     if (formData.message.length < 20) {
-      newErrors.message = 'Nachricht muss mindestens 20 Zeichen lang sein';
+      newErrors.message = t.errors.messageShort;
       valid = false;
     }
 
     if (!formData.gdprConsent) {
-      newErrors.gdprConsent = 'Sie müssen der Datenschutzerklärung zustimmen';
+      newErrors.gdprConsent = t.errors.consentRequired;
       valid = false;
     }
 
@@ -132,7 +133,7 @@ const ContactForm = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="firstName" className="block text-sm font-medium text-[#1c170d]">
-            Vorname *
+            {t.firstName} *
           </label>
           <input
             type="text"
@@ -147,7 +148,7 @@ const ContactForm = () => {
 
         <div>
           <label htmlFor="lastName" className="block text-sm font-medium text-[#1c170d]">
-            Nachname *
+            {t.lastName} *
           </label>
           <input
             type="text"
@@ -163,7 +164,7 @@ const ContactForm = () => {
 
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-[#1c170d]">
-          E-Mail *
+          {t.email} *
         </label>
         <input
           type="email"
@@ -178,7 +179,7 @@ const ContactForm = () => {
 
       <div>
         <label htmlFor="phone" className="block text-sm font-medium text-[#1c170d]">
-          Telefonnummer
+          {t.phone}
         </label>
         <input
           type="tel"
@@ -192,7 +193,7 @@ const ContactForm = () => {
 
       <div>
         <label htmlFor="subject" className="block text-sm font-medium text-[#1c170d]">
-          Betreff *
+          {t.subject} *
         </label>
         <select
           id="subject"
@@ -201,7 +202,7 @@ const ContactForm = () => {
           onChange={handleChange}
           className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#f4c653] focus:ring-[#f4c653] sm:text-sm ${errors.subject ? 'border-red-500' : 'border'}`}
         >
-          <option value="">Bitte wählen...</option>
+          <option value="">{t.selectSubject}</option>
           {subjects.map((subject) => (
             <option key={subject} value={subject}>
               {subject}
@@ -213,7 +214,7 @@ const ContactForm = () => {
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-[#1c170d]">
-          Nachricht *
+          {t.message} *
         </label>
         <textarea
           id="message"
@@ -239,11 +240,11 @@ const ContactForm = () => {
         </div>
         <div className="ml-3 text-sm">
           <label htmlFor="gdprConsent" className="font-medium text-[#1c170d]">
-            Ich bin mit der Speicherung und Verarbeitung meiner Daten im Rahmen dieser Kontaktanfrage einverstanden.
+            {t.consent}
           </label>
           <p className="text-gray-500">
             <a href="/datenschutz" className="text-[#f4c653] hover:text-[#e0b548]">
-              Mehr erfahren
+              {t.moreInfo}
             </a>
           </p>
           {errors.gdprConsent && <p className="mt-1 text-sm text-red-600">{errors.gdprConsent}</p>}
@@ -256,13 +257,13 @@ const ContactForm = () => {
           disabled={isSubmitting}
           className="inline-flex justify-center rounded-md border border-transparent bg-[#f4c653] py-2 px-4 text-sm font-medium text-[#1c170d] shadow-sm hover:bg-[#e0b548] focus:outline-none focus:ring-2 focus:ring-[#f4c653] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? 'Wird gesendet...' : 'Absenden'}
+          {isSubmitting ? t.sending : t.submit}
         </button>
       </div>
 
       {showSuccess && (
         <div className="fixed bottom-4 right-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
-          <p>Vielen Dank! Ihre Nachricht wurde erfolgreich übermittelt. Wir melden uns in Kürze bei Ihnen.</p>
+          <p>{t.success}</p>
         </div>
       )}
     </form>

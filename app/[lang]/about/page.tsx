@@ -1,6 +1,10 @@
-import Button from '../../components/UI/Button'
+import Button from '../../../components/UI/Button'
+import { Locale } from '../../../i18n-config'
+import { getDictionary } from '../../dictionaries'
 
-export default function AboutPage() {
+export default async function AboutPage({ params: { lang } }: { params: { lang: Locale } }) {
+  const dictionary = await getDictionary(lang)
+
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-10 py-12">
       <div className="mb-10">

@@ -1,13 +1,15 @@
-import { services } from '../../../data/services'
+import { getServices } from '../../../../data/services'
 import { notFound } from 'next/navigation'
-import { Icons } from '../../../components/UI/Icons'
+import { Icons } from '../../../../components/UI/Icons'
 import { Metadata } from 'next'
+import { Locale } from '../../../../i18n-config'
 
 interface Props {
-  params: { slug: string }
+  params: { slug: string; lang: Locale }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const services = getServices(params.lang)
   const service = services.find(s => s.slug === params.slug)
   if (!service) return {}
 
@@ -20,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function ServiceDetailPage({
   params,
 }: Props) {
+  const services = getServices(params.lang)
   const service = services.find(s => s.slug === params.slug)
   if (!service) return notFound()
 
@@ -33,7 +36,7 @@ export default function ServiceDetailPage({
           {service.title}
         </h1>
       </div>
-      
+
       <p className="text-lg text-[#9b844b] mb-10">{service.description}</p>
 
       {service.processSteps && (
