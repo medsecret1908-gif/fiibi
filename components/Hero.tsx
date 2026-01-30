@@ -2,20 +2,19 @@ import React from 'react';
 import Image from 'next/image';
 import Button from './UI/Button';
 
-const Hero = () => {
+const Hero = ({ dictionary }: { dictionary: any }) => {
   return (
     <section className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="order-2 md:order-1 animate-fadeIn">
           <h1 className="text-4xl md:text-6xl font-bold text-[#1c170d] mb-8 leading-tight">
-            Ihre finanzielle Zukunft,<br />unsere Expertise
+            {dictionary.hero.title}
           </h1>
           <p className="text-xl text-[#9b844b] mb-10 max-w-lg">
-            Igor Sigatinski ist ein erfahrener Finanzberater mit Spezialisierung auf Immobilien,
-            Versicherungen und Projektbeteiligungen.
+            {dictionary.hero.subtitle}
           </p>
           <Button variant="primary" className="text-lg px-8 py-3">
-            Beratung buchen
+            {dictionary.hero.cta}
           </Button>
         </div>
         <div className="order-1 md:order-2 animate-fadeIn flex justify-center">

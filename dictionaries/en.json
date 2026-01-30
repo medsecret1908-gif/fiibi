@@ -1,0 +1,54 @@
+{
+    "navigation": {
+        "services": "Services",
+        "about": "About Me",
+        "contact": "Contact"
+    },
+    "hero": {
+        "title": "Your Financial Future, Our Expertise",
+        "subtitle": "Igor Sigatinski is an experienced financial advisor specializing in real estate, insurance, and project investments.",
+        "cta": "Book Consultation"
+    },
+    "services": {
+        "learnMore": "Learn more"
+    },
+    "contact": {
+        "title": "Contact Us",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email",
+        "phone": "Phone Number",
+        "subject": "Subject",
+        "message": "Message",
+        "selectSubject": "Please select...",
+        "submit": "Send Message",
+        "sending": "Sending...",
+        "success": "Thank you! Your message has been sent successfully. We will contact you shortly.",
+        "consent": "I agree to the storage and processing of my data for this inquiry.",
+        "moreInfo": "Learn more",
+        "subjects": {
+            "finance": "Financial Planning",
+            "investment": "Investment Advice",
+            "retirement": "Retirement Planning",
+            "financing": "Financing",
+            "info": "Info Session",
+            "realEstate": "Real Estate Investment"
+        },
+        "errors": {
+            "firstNameRequired": "First name is required",
+            "lastNameRequired": "Last name is required",
+            "emailRequired": "Email is required",
+            "emailInvalid": "Please enter a valid email address",
+            "subjectRequired": "Please select a subject",
+            "messageShort": "Message must be at least 20 characters long",
+            "consentRequired": "You must agree to the privacy policy"
+        }
+    },
+    "footer": {
+        "legal": "Legal",
+        "imprint": "Imprint",
+        "privacy": "Privacy Policy",
+        "terms": "Terms & Conditions",
+        "copyright": "All rights reserved."
+    }
+}

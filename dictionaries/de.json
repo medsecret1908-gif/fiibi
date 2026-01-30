@@ -1,0 +1,54 @@
+{
+    "navigation": {
+        "services": "Leistungen",
+        "about": "Über mich",
+        "contact": "Kontakt"
+    },
+    "hero": {
+        "title": "Ihre finanzielle Zukunft, unsere Expertise",
+        "subtitle": "Igor Sigatinski ist ein erfahrener Finanzberater mit Spezialisierung auf Immobilien, Versicherungen und Projektbeteiligungen.",
+        "cta": "Beratung buchen"
+    },
+    "services": {
+        "learnMore": "Mehr erfahren"
+    },
+    "contact": {
+        "title": "Kontaktieren Sie uns",
+        "firstName": "Vorname",
+        "lastName": "Nachname",
+        "email": "E-Mail",
+        "phone": "Telefonnummer",
+        "subject": "Betreff",
+        "message": "Nachricht",
+        "selectSubject": "Bitte wählen...",
+        "submit": "Absenden",
+        "sending": "Wird gesendet...",
+        "success": "Vielen Dank! Ihre Nachricht wurde erfolgreich übermittelt. Wir melden uns in Kürze bei Ihnen.",
+        "consent": "Ich bin mit der Speicherung und Verarbeitung meiner Daten im Rahmen dieser Kontaktanfrage einverstanden.",
+        "moreInfo": "Mehr erfahren",
+        "subjects": {
+            "finance": "Finanzplanung",
+            "investment": "Anlageberatung",
+            "retirement": "Altersvorsorge",
+            "financing": "Finanzierungen",
+            "info": "Infogespräch",
+            "realEstate": "Immobilieninvestment"
+        },
+        "errors": {
+            "firstNameRequired": "Vorname ist erforderlich",
+            "lastNameRequired": "Nachname ist erforderlich",
+            "emailRequired": "E-Mail ist erforderlich",
+            "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+            "subjectRequired": "Bitte wählen Sie einen Betreff",
+            "messageShort": "Nachricht muss mindestens 20 Zeichen lang sein",
+            "consentRequired": "Sie müssen der Datenschutzerklärung zustimmen"
+        }
+    },
+    "footer": {
+        "legal": "Rechtliches",
+        "imprint": "Impressum",
+        "privacy": "Datenschutz",
+        "terms": "AGB",
+        "copyright": "Alle Rechte vorbehalten."
+    }
+}

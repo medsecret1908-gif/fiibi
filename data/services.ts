@@ -1,4 +1,16 @@
-export const services = [
+import { Locale } from '../i18n-config';
+import { Icons } from '../components/UI/Icons';
+
+export type Service = {
+  title: string;
+  slug: string;
+  description: string;
+  icon: keyof typeof Icons;
+  processSteps: string[];
+  faqs: { question: string; answer: string }[];
+};
+
+const servicesDe: Service[] = [
   {
     title: 'Finanzen',
     slug: 'finance',
@@ -119,4 +131,131 @@ export const services = [
     processSteps: [],
     faqs: []
   }
-]
+];
+
+const servicesEn: Service[] = [
+  {
+    title: 'Finance',
+    slug: 'finance',
+    description: 'Comprehensive financial planning and investment strategies.',
+    icon: 'finance' as const,
+    processSteps: [
+      'Initial consultation and needs analysis',
+      'Development of an individual financial plan',
+      'Implementation and continuous monitoring'
+    ],
+    faqs: [
+      {
+        question: 'How often should I review my financial plan?',
+        answer: 'We recommend quarterly reviews with annual comprehensive updates.'
+      },
+      {
+        question: 'What is your investment philosophy?',
+        answer: 'We follow an evidence-based, long-term investment approach.'
+      }
+    ]
+  },
+  {
+    title: 'Real Estate',
+    slug: 'real-estate',
+    description: 'Expert advice on buying, selling, and managing real estate.',
+    icon: 'realEstate' as const,
+    processSteps: [
+      'Real estate valuation and market analysis',
+      'Strategic marketing plan',
+      'Negotiations and closing process'
+    ],
+    faqs: [
+      {
+        question: 'How do you determine property value?',
+        answer: 'We use comparative market analysis and local expertise.'
+      }
+    ]
+  },
+  {
+    title: 'Insurance',
+    slug: 'insurance',
+    description: 'Tailored insurance solutions to protect your assets.',
+    icon: 'insurance' as const,
+    processSteps: [
+      'Risk assessment',
+      'Insurance comparison and recommendations',
+      'Ongoing policy management'
+    ],
+    faqs: [
+      {
+        question: 'How often should I review my insurance coverage?',
+        answer: 'Annually or after major life events.'
+      }
+    ]
+  },
+  {
+    title: 'Project Participation',
+    slug: 'project-participation',
+    description: 'Strategic participation in promising projects for higher returns.',
+    icon: 'projects' as const,
+    processSteps: [
+      'Identification of opportunities',
+      'Due diligence process',
+      'Structuring the investment'
+    ],
+    faqs: [
+      {
+        question: 'What types of projects do you typically recommend?',
+        answer: 'We focus on sustainable infrastructure and technology projects.'
+      }
+    ]
+  },
+  {
+    title: 'Investment Advice',
+    slug: 'investment-advice',
+    description: 'Whether opening an account for a godchild, planning wealth transfer, or simply organizing finances perfectly – I advise you comprehensively on stocks, bonds, funds, and derivatives.',
+    icon: 'finance' as const,
+    processSteps: [],
+    faqs: []
+  },
+  {
+    title: 'Retirement Planning',
+    slug: 'retirement-planning',
+    description: 'Whether you want to retire early or simply ensure secure provision – we look together at your retirement income and help plan the right steps in time.',
+    icon: 'finance' as const,
+    processSteps: [],
+    faqs: []
+  },
+  {
+    title: 'Financing',
+    slug: 'financing',
+    description: 'I accompany you in financing your home, capital investments, or renovation projects like photovoltaic systems. Step by step to the right solution.',
+    icon: 'finance' as const,
+    processSteps: [],
+    faqs: []
+  },
+  {
+    title: 'Disability Insurance',
+    slug: 'disability-insurance',
+    description: 'An unexpected stroke of fate can endanger your existence. I show you how to financially secure yourself against occupational disability.',
+    icon: 'insurance' as const,
+    processSteps: [],
+    faqs: []
+  },
+  {
+    title: 'Health Insurance',
+    slug: 'health-insurance',
+    description: 'The right health insurance is essential. I analyze your needs with you and find a suitable tariff.',
+    icon: 'insurance' as const,
+    processSteps: [],
+    faqs: []
+  },
+  {
+    title: 'Insurances',
+    slug: 'insurances',
+    description: 'Whether liability, household contents, or legal protection – I help you choose suitable insurances to optimally protect persons and material assets.',
+    icon: 'insurance' as const,
+    processSteps: [],
+    faqs: []
+  }
+];
+
+export const getServices = (lang: Locale) => {
+  return lang === 'en' ? servicesEn : servicesDe;
+};
