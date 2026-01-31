@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import Button from './UI/Button';
 import { Icons } from './UI/Icons';
-import { GermanFlag, UKFlag } from './UI/Flags';
+import { GermanFlag, UKFlag, RussianFlag } from './UI/Flags';
 import { Locale } from '../i18n-config';
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
@@ -57,6 +57,13 @@ const HeaderNav = ({ dictionary, lang }: { dictionary: any, lang: Locale }) => {
             >
               <UKFlag className="w-5 h-auto rounded-[2px]" />
             </Link>
+            <Link
+              href={switchLanguage('ru')}
+              className={`p-1.5 rounded-full transition-colors ${lang === 'ru' ? 'bg-[#f4c653] shadow-sm' : 'hover:bg-gray-200 opacity-60 hover:opacity-100'}`}
+              aria-label="Русский"
+            >
+              <RussianFlag className="w-5 h-auto rounded-[2px]" />
+            </Link>
           </div>
 
           <NavLink href={`/${lang}`}>{dictionary.navigation.services}</NavLink>
@@ -82,7 +89,7 @@ const HeaderNav = ({ dictionary, lang }: { dictionary: any, lang: Locale }) => {
             <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg py-4 px-6 z-50 border-t border-gray-200">
               {/* Mobile Language Switcher */}
               <div className="flex items-center gap-4 mb-4 pb-4 border-b border-gray-100">
-                <span className="text-sm font-medium text-gray-500">Sprache / Language:</span>
+                <span className="text-sm font-medium text-gray-500">Sprache / Language / Язык:</span>
                 <div className="flex items-center gap-2">
                   <Link
                     href={switchLanguage('de')}
@@ -95,6 +102,12 @@ const HeaderNav = ({ dictionary, lang }: { dictionary: any, lang: Locale }) => {
                     className={`p-1.5 rounded-lg transition-colors ${lang === 'en' ? 'bg-[#f4c653] shadow-sm' : 'bg-gray-50 hover:bg-gray-100'}`}
                   >
                     <UKFlag className="w-6 h-auto rounded-[2px]" />
+                  </Link>
+                  <Link
+                    href={switchLanguage('ru')}
+                    className={`p-1.5 rounded-lg transition-colors ${lang === 'ru' ? 'bg-[#f4c653] shadow-sm' : 'bg-gray-50 hover:bg-gray-100'}`}
+                  >
+                    <RussianFlag className="w-6 h-auto rounded-[2px]" />
                   </Link>
                 </div>
               </div>

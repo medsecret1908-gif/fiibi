@@ -39,3 +39,17 @@ export const UKFlag = ({ className = "w-6 h-4" }: FlagProps) => (
         </g>
     </svg>
 );
+
+export const RussianFlag = ({ className = "w-6 h-4" }: FlagProps) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 9 6"
+        className={className}
+        aria-label="Russian Flag"
+    >
+        <rect width="9" height="6" fill="#fff" />
+        <rect width="9" height="4" y="2" fill="#0039A6" />
+        <rect width="9" height="2" y="4" fill="#D52B1E" />
+    </svg>
+);
+
