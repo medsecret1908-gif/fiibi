@@ -9,8 +9,32 @@
         "subtitle": "Igor Sigatinski is an experienced financial advisor specializing in real estate, insurance, and project investments.",
         "cta": "Book Consultation"
     },
+    "about": {
+        "title": "About Igor Sigatinski",
+        "subtitle": "Igor Sigatinski is an experienced financial and real estate advisor with a proven track record of helping clients achieve their financial goals. With extensive experience in real estate mortgage brokerage, credit mediation, real estate brokerage, and insurance, Igor provides a comprehensive suite of services tailored to meet the unique needs of each client.",
+        "qualifications": "Qualifications",
+        "qual_1": "Real Estate Mortgage Brokerage",
+        "qual_2": "Credit & Real Estate Mediation",
+        "qual_3": "Insurance Specialist",
+        "mission_title": "Mission Statement",
+        "mission_text": "My mission is to provide clients with independent, equitable advice, ensuring their interests are always at the forefront. I believe in transparency, integrity, and a customer-centric approach that excludes any fund influences to maintain objectivity and trust.",
+        "philosophy_title": "Philosophy",
+        "philosophy_text": "My philosophy centers on the provision of unbiased financial and real estate advice. By working independently and avoiding fund affiliations, I can provide advice that is solely geared towards the success and financial well-being of the clients. This approach fosters long-term relationships built on trust and mutual respect."
+    },
     "services": {
-        "learnMore": "Learn more"
+        "title": "Our Services",
+        "learnMore": "Learn more",
+        "detail": {
+            "process": "Our Process",
+            "faq": "Frequently Asked Questions",
+            "contact_title": "Contact Us",
+            "form": {
+                "name": "Name *",
+                "email": "Email *",
+                "message": "Message *",
+                "send": "Send Message"
+            }
+        }
     },
     "booking": {
         "title": "Book Consultation",
@@ -50,6 +74,7 @@
         }
     },
     "footer": {
+        "companyName": "Fiibi Financial Services",
         "legal": "Legal",
         "imprint": "Imprint",
         "privacy": "Privacy Policy",

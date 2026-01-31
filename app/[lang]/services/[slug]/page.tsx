@@ -1,8 +1,10 @@
 import { getServices } from '../../../../data/services'
 import { notFound } from 'next/navigation'
 import { Icons } from '../../../../components/UI/Icons'
+import { getDictionary } from '../../../dictionaries'
 import { Metadata } from 'next'
 import { Locale } from '../../../../i18n-config'
+import Link from 'next/link'
 
 interface Props {
   params: { slug: string; lang: Locale }
@@ -10,18 +12,20 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const services = getServices(params.lang)
+  const dictionary = await getDictionary(params.lang)
   const service = services.find(s => s.slug === params.slug)
   if (!service) return {}
 
   return {
-    title: `${service.title} - Fiibi Finanzdienstleistungen`,
+    title: `${service.title} - ${dictionary.footer.companyName}`,
     description: service.description,
   }
 }
 
-export default function ServiceDetailPage({
+export default async function ServiceDetailPage({
   params,
 }: Props) {
+  const dictionary = await getDictionary(params.lang)
   const services = getServices(params.lang)
   const service = services.find(s => s.slug === params.slug)
   if (!service) return notFound()
@@ -39,10 +43,10 @@ export default function ServiceDetailPage({
 
       <p className="text-lg text-[#9b844b] mb-10">{service.description}</p>
 
-      {service.processSteps && (
+      {service.processSteps && service.processSteps.length > 0 && (
         <div className="mb-10">
           <h2 className="text-2xl font-bold tracking-tight text-[#1c170d] mb-6">
-            Unser Prozess
+            {dictionary.services.detail.process}
           </h2>
           <ol className="list-decimal pl-5 space-y-3">
             {service.processSteps.map((step, i) => (
@@ -52,10 +56,10 @@ export default function ServiceDetailPage({
         </div>
       )}
 
-      {service.faqs && (
+      {service.faqs && service.faqs.length > 0 && (
         <div className="mb-10">
           <h2 className="text-2xl font-bold tracking-tight text-[#1c170d] mb-6">
-            Häufig gestellte Fragen
+            {dictionary.services.detail.faq}
           </h2>
           <div className="space-y-6">
             {service.faqs.map((faq, i) => (
@@ -72,12 +76,12 @@ export default function ServiceDetailPage({
 
       <div className="mt-12">
         <h2 className="text-2xl font-bold tracking-tight text-[#1c170d] mb-6">
-          Kontaktieren Sie uns
+          {dictionary.services.detail.contact_title}
         </h2>
         <form className="space-y-6">
           <div>
             <label htmlFor="name" className="block mb-2 text-[#1c170d]">
-              Name *
+              {dictionary.services.detail.form.name}
             </label>
             <input
               type="text"
@@ -88,7 +92,7 @@ export default function ServiceDetailPage({
           </div>
           <div>
             <label htmlFor="email" className="block mb-2 text-[#1c170d]">
-              E-Mail *
+              {dictionary.services.detail.form.email}
             </label>
             <input
               type="email"
@@ -99,7 +103,7 @@ export default function ServiceDetailPage({
           </div>
           <div>
             <label htmlFor="message" className="block mb-2 text-[#1c170d]">
-              Nachricht *
+              {dictionary.services.detail.form.message}
             </label>
             <textarea
               id="message"
@@ -112,7 +116,7 @@ export default function ServiceDetailPage({
             type="submit"
             className="bg-[#f4c653] text-[#1c170d] rounded-md font-bold px-6 py-3 hover:bg-[#e5b744] transition"
           >
-            Nachricht senden
+            {dictionary.services.detail.form.send}
           </button>
         </form>
       </div>

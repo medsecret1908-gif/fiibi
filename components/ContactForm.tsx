@@ -1,17 +1,16 @@
 'use client';
 import React, { useState } from 'react';
 
-const subjects = [
-  'Finanzplanung',
-  'Anlageberatung',
-  'Altersvorsorge',
-  'Finanzierungen',
-  'Infogespräch',
-  'Immobilieninvestment'
-];
-
 const ContactForm = ({ dictionary }: { dictionary: any }) => {
   const t = dictionary.contact;
+  const subjects = [
+    t.subjects.finance,
+    t.subjects.investment,
+    t.subjects.retirement,
+    t.subjects.financing,
+    t.subjects.info,
+    t.subjects.realEstate
+  ];
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',

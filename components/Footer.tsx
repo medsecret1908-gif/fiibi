@@ -7,7 +7,7 @@ const Footer = ({ dictionary }: { dictionary: any }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <h3 className="text-2xl font-bold tracking-tight mb-3">Fiibi Finanzdienstleistungen</h3>
+            <h3 className="text-2xl font-bold tracking-tight mb-3">{dictionary.footer.companyName}</h3>
             <p className="text-[#9b844b]">© {new Date().getFullYear()} {dictionary.footer.copyright}</p>
           </div>
           <div className="flex space-x-6">

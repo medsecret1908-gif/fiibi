@@ -8,9 +8,14 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }))
 }
 
-export const metadata = {
-  title: 'Fiibi Finanzdienstleistungen',
-  description: 'Ihr Partner für Finanzen, Immobilien und Versicherungen',
+import { Locale } from '../../i18n-config'
+
+export async function generateMetadata({ params }: { params: { lang: Locale } }) {
+  const dictionary = await getDictionary(params.lang)
+  return {
+    title: dictionary.footer.companyName,
+    description: dictionary.hero.subtitle,
+  }
 }
 
 export default async function RootLayout({

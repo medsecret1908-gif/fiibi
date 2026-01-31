@@ -9,8 +9,32 @@
         "subtitle": "Igor Sigatinski ist ein erfahrener Finanzberater mit Spezialisierung auf Immobilien, Versicherungen und Projektbeteiligungen.",
         "cta": "Beratung buchen"
     },
+    "about": {
+        "title": "Über Igor Sigatinski",
+        "subtitle": "Igor Sigatinski ist ein erfahrener Finanz- und Immobilienberater mit nachgewiesener Erfolgsbilanz bei der Unterstützung von Kunden bei der Erreichung ihrer finanziellen Ziele. Mit umfangreicher Erfahrung in der Immobilienkreditvermittlung, Kreditvermittlung, Immobilienvermittlung und Versicherungen bietet Igor ein umfassendes Dienstleistungspaket, das auf die individuellen Bedürfnisse jedes Kunden zugeschnitten ist.",
+        "qualifications": "Qualifikationen",
+        "qual_1": "Immobilienkreditvermittlung",
+        "qual_2": "Kredit- & Immobilienvermittlung",
+        "qual_3": "Versicherungsspezialist",
+        "mission_title": "Mission Statement",
+        "mission_text": "Meine Mission ist es, Kunden unabhängige, gleichwertige Beratung zu bieten und sicherzustellen, dass ihre Interessen immer im Vordergrund stehen. Ich glaube an Transparenz, Integrität und einen kundenzentrierten Ansatz, der jegliche Einflüsse von Fonds ausschließt, um Objektivität und Vertrauen zu wahren.",
+        "philosophy_title": "Philosophie",
+        "philosophy_text": "Meine Philosophie konzentriert sich auf die Bereitstellung unvoreingenommener finanzieller und immobilienbezogener Beratung. Durch unabhängiges Arbeiten und den Verzicht auf Fondsverbindungen kann ich Ratschläge geben, die ausschließlich auf den Erfolg und das finanzielle Wohlergehen der Kunden ausgerichtet sind. Dieser Ansatz fördert langfristige Beziehungen, die auf Vertrauen und gegenseitigem Respekt basieren."
+    },
     "services": {
-        "learnMore": "Mehr erfahren"
+        "title": "Unsere Leistungen",
+        "learnMore": "Mehr erfahren",
+        "detail": {
+            "process": "Unser Prozess",
+            "faq": "Häufig gestellte Fragen",
+            "contact_title": "Kontaktieren Sie uns",
+            "form": {
+                "name": "Name *",
+                "email": "E-Mail *",
+                "message": "Nachricht *",
+                "send": "Nachricht senden"
+            }
+        }
     },
     "booking": {
         "title": "Beratung buchen",
@@ -50,6 +74,7 @@
         }
     },
     "footer": {
+        "companyName": "Fiibi Finanzdienstleistungen",
         "legal": "Rechtliches",
         "imprint": "Impressum",
         "privacy": "Datenschutz",
