@@ -9,7 +9,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 
   return (
     <>
-      <Hero dictionary={dictionary} />
+      <Hero dictionary={dictionary} lang={lang} />
       <ServicesGrid dictionary={dictionary} lang={lang} />
     </>
   );

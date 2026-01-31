@@ -65,9 +65,11 @@ const HeaderNav = ({ dictionary, lang }: { dictionary: any, lang: Locale }) => {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Button variant="primary" className="hidden md:block">
-            {dictionary.hero.cta}
-          </Button>
+          <Link href={`/${lang}/booking`}>
+            <Button variant="primary" className="hidden md:block">
+              {dictionary.hero.cta}
+            </Button>
+          </Link>
           <button
             className="md:hidden text-[#1c170d] hover:text-[#9b844b] transition-colors"
             onClick={() => setIsOpen(!isOpen)}
@@ -119,13 +121,15 @@ const HeaderNav = ({ dictionary, lang }: { dictionary: any, lang: Locale }) => {
                 >
                   {dictionary.navigation.contact}
                 </Link>
-                <Button
-                  variant="primary"
-                  className="mt-4"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {dictionary.hero.cta}
-                </Button>
+                <Link href={`/${lang}/booking`}>
+                  <Button
+                    variant="primary"
+                    className="mt-4 w-full"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {dictionary.hero.cta}
+                  </Button>
+                </Link>
               </nav>
             </div>
           )}

@@ -12,6 +12,11 @@
     "services": {
         "learnMore": "Learn more"
     },
+    "booking": {
+        "title": "Book Consultation",
+        "description": "Schedule your personal consultation appointment now",
+        "heading": "Choose Your Preferred Time"
+    },
     "contact": {
         "title": "Contact Us",
         "firstName": "First Name",

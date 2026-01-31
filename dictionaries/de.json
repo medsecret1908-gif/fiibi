@@ -12,6 +12,11 @@
     "services": {
         "learnMore": "Mehr erfahren"
     },
+    "booking": {
+        "title": "Beratung buchen",
+        "description": "Buchen Sie jetzt Ihren persönlichen Beratungstermin",
+        "heading": "Wählen Sie Ihren Wunschtermin"
+    },
     "contact": {
         "title": "Kontaktieren Sie uns",
         "firstName": "Vorname",

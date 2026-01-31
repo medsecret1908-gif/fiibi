@@ -1,8 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Button from './UI/Button';
+import { Locale } from '../i18n-config';
 
-const Hero = ({ dictionary }: { dictionary: any }) => {
+const Hero = ({ dictionary, lang }: { dictionary: any; lang: Locale }) => {
   return (
     <section className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -13,9 +15,11 @@ const Hero = ({ dictionary }: { dictionary: any }) => {
           <p className="text-xl text-[#9b844b] mb-10 max-w-lg">
             {dictionary.hero.subtitle}
           </p>
-          <Button variant="primary" className="text-lg px-8 py-3">
-            {dictionary.hero.cta}
-          </Button>
+          <Link href={`/${lang}/booking`}>
+            <Button variant="primary" className="text-lg px-8 py-3">
+              {dictionary.hero.cta}
+            </Button>
+          </Link>
         </div>
         <div className="order-1 md:order-2 animate-fadeIn flex justify-center">
           <div className="relative aspect-[320/572] w-full max-w-sm rounded-xl overflow-hidden shadow-xl border-2 border-borderSoft">
